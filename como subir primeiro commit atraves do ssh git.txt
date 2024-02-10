@@ -1,0 +1,372 @@
+======================================================================================================
+
+git init
+
+Inicializa um repositório Git em um diretório
+
+=======================================================================================================
+
+ls     visualiza o que tem na pasta
+
+========================================================================================================
+
+git rm <meu_arquivo.txt>
+
+Remover arquivo/diretório
+
+__________________________________________________________________________________________________________
+
+
+git rm -r <diretorio.txt>
+
+Remover diretório
+
+
+_________________________________________________________________________________________________________
+
+git rm *.png
+
+remove todos arquivos da pasta com formato .png  pode mudar para .py   ou .txt
+
+
+==========================================================================================================
+
+git restore <diretorio.txt>
+
+ Restaurar o arquivo deletado
+
+==========================================================================================================
+
+git add <arquivo.txt>
+
+adiciona um arquivo especificico
+
+
+
+para editar
+
+
+
+git add Graficos.py
+
+-------------------------------------------------------------------------------------------------
+
+git add .
+
+adiciona todos os arquivos
+
+========================================================================================================
+
+git push
+
+Envia as alterações locais para o repositório remoto
+
+-------------------------------------------------------------------------------------------------------
+
+git push --force origin main
+
+força o push do main (envia de qualquer jeito)
+
+
+=========================================================================================================
+
+git pull
+
+Atualiza o repositório local com as alterações do repositório remoto
+
+
+-------------------------------------------------------------------------------------------------------
+
+git pull --force origin main
+
+força o pull trazer os arquvos do repositorio remoto
+=========================================================================================================
+
+git reset --hard HEAD^
+
+esse comando desfaz o commit e o push e volta o ultimo commit feito
+
+________________________________________________________________________________________________________
+
+git reset --hard HEAD~1
+
+Desfazer o último commit e descartar as alterações
+
+==========================================================================================================
+
+git reset --soft HEAD^
+
+esse comando desfaz o push
+
+__________________________________________________________________________________________________________
+
+git reset --soft HEAD~1
+
+Desfazer o último commit mantendo as alterações
+
+=========================================================================================================
+
+git diff
+
+git diff visualiza a diferença total do que voce alterou no codigo...  terminal e deseja sair da visualização pressionar a tecla "Q" ou "Ctrl + C" para sair
+
+=========================================================================================================
+
+
+para subir o projeto ao github
+
+
+git init
+git add .
+git commit -m "Primerio commit"
+git branch -M main
+git remote add origin git@github.com:kono100/Graficos.git
+git push -u origin main
+
+
+
+esse é para alterar 
+
+
+git init
+git add .
+git commit -m "Primerio commit"
+git branch -M main
+git remote add origin git@github.com:kono100/teste.git
+git push -u origin main
+
+
+
+=======================================================================================================
+
+
+para alterar os repositorios ja existentes do github
+
+
+git clone git@github.com:kono100/Gestao_de_Condominio_MRV.git
+cd Gestao_de_Condominio_MRV
+git add .
+git commit -m "Commit"
+git push origin main
+
+
+
+esse é para alterar 
+
+
+git clone git@github.com:kono100/testttttt.git
+cd testttttt
+git add .
+git commit -m "Commit"
+git push origin main
+
+
+==================================================================================================
+
+
+
+
+
+
+
+
+
+================================================================================================
+
+git branch
+git branch <nome_branch>
+
+Lista, cria ou exclui branches.
+
+________________________________________________________________________________________________
+
+git branch -d <nome_do_branch>
+
+    Excluir um branch após mesclar todas as alterações
+    
+_____________________________________________________________________________________________
+    
+git branch -D <nome_do_branch>
+    
+    Excluir um branch independentemente das alterações (forçado)
+
+================================================================================================
+
+git checkout <nome_branch>
+
+Muda para um branch específico ou restaura arquivos.
+
+________________________________________________________________________________________________
+
+git checkout -- <meu_arquivo.txt>
+
+Desfazendo alteração local tipo (Ctrl + Z )
+
+===============================================================================================
+
+git merge <nome_branch>
+
+Combina as alterações de uma branch em outra.
+
+===============================================================================================
+
+
+git push --set-upstream origin <nome_branch>:
+
+Faz o push do branch local <nome_branch> para o repositório remoto chamado "origin" e configura esse branch remoto como o upstream, facilitando futuros comandos de push e pull.
+
+_______________________________________________________________________________________________
+
+git config --global push.default current:
+    
+Configura globalmente o Git para empurrar o branch atual para um branch remoto com o mesmo nome por padrão, quando git push é executado sem especificar explicitamente o branch remoto e local.
+
+
+==============================================================================================
+
+
+
+git pull --set-upstream origin <nome_branch>:
+
+    Faz pull do branch remoto "origin/<nome_branch>" para o branch local <nome_branch>, configurando automaticamente o branch remoto como upstream.
+    
+___________________________________________________________________________________________________
+    
+git pull -u origin <nome_branch>:
+    
+Faz o mesmo que o comando anterior, mas usando a opção abreviada -u para configurar o upstream durante o pull.
+
+=============================================================================================
+
+git reflog
+
+O comando git reflog exibe o log de referências do Git, mostrando os históricos de movimentação do HEAD e de outras referências, como branches, durante as operações do Git.
+
+pressionar "Q" ou "Ctrl + C" para sair
+
+==============================================================================================
+
+git reset --hard <id_do_commit>
+    volta no commit que voce deseja porem tem que procurar o id <id_do_commit> no git reflog
+
+==============================================================================================
+
+
+git log
+
+Exibe um histórico de commits.
+
+===============================================================================================
+
+git remote rename origin curso-git
+
+Renomear um repositório remoto
+
+______________________________________________________________________________________________
+
+git remote rm curso-git
+
+Desvincular um repositório remoto
+
+______________________________________________________________________________________________
+
+git remote -v
+
+é usado para visualizar as URLs dos repositórios remotos vinculados ao seu repositório Git local.
+-----------------------------------------------------------------------------------------------
+
+git remote add <nome_remoto> <URL_do_repositório>
+
+git remote add origin git@github.com:kono100/voz-para-texto.git
+
+
+é usado para adicionar um novo repositório remoto ao seu repositório Git local.
+
+
+==============================================================================================
+
+git fetch
+
+Busca as alterações do repositório remoto sem realizar o merge
+
+==============================================================================================
+
+git fetch origin
+git reset --hard origin/main
+
+descartar as modificações locais e forçar o seu repositório local a ser idêntico ao repositório remoto
+
+==============================================================================================
+
+git fetch --all
+git reset --hard origin/main  # Substitua "main" pelo nome da sua branch se for diferente
+git clean -fd
+
+repositório local esteja exatamente igual ao repositório remoto
+
+
+
+git fetch --all: Atualiza todas as referências locais para refletir o estado atual do repositório remoto.
+
+git reset --hard origin/main: Reseta o branch local (main neste exemplo) para o mesmo commit que o branch remoto main.
+
+git clean -fd: Remove todos os arquivos não rastreados e diretórios no seu diretório de trabalho.
+
+
+
+================================================================================================
+
+git tag vs-1.1
+
+Criando uma tag leve
+____________________________________________________________________________________________
+
+git tag -a vs-1.1 -m "Minha versão 1.1"
+
+Criando uma tag anotada
+
+_____________________________________________________________________________________________
+
+
+Criando uma tag assinada
+Para criar uma tag assinada é necessário uma chave privada (GNU Privacy Guard - GPG).
+
+git tag -s vs-1.1 -m "Minha tag assinada 1.1"
+
+____________________________________________________________________________________________
+
+git tag -a vs-1.2 9fceb02
+
+Criando tag a partir de um commit (hash)
+
+=============================================================================================
+
+Setar editor
+git config --global core.editor vim
+
+==============================================================================================
+
+Setar ferramenta de merge
+git config --global merge.tool vimdiff
+
+==============================================================================================
+
+Setar arquivos a serem ignorados
+git config --global core.excludesfile ~/.gitignore
+
+==============================================================================================
+
+Listar configurações
+git config --list
+
+
+==============================================================================================
+
+
+
+
+
+
+
+
+

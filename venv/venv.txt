@@ -1,0 +1,56 @@
+=============================================================================
+
+python -m venv .venv
+
+cria ambiente virtual com o nome  .venv
+
+===============================================================================
+
+.\.venv\Scripts\activate
+
+ativa ambiente virtual
+
+===============================================================================
+
+deactivate
+
+desativa ambiente virtual
+
+===============================================================================
+
+pip list
+
+Listar pacotes instalados no ambiente virtual:
+
+================================================================================
+
+pip install nome_do_pacote
+
+é usado para instalar um pacote Python
+
+
+================================================================================
+
+pip freeze > requirements.txt
+
+é usado para gerar um arquivo requirements.txt
+
+===============================================================================
+
+pip install -r requirements.txt
+
+baixa os pip's do arquivo requirements.txt
+
+==============================================================================
+
+
+rm -r .venv          # No Linux/Mac
+
+rmdir /s /q .venv    # No Windows
+
+/s: Remove o diretório especificado e todos os seus subdiretórios, incluindo os vazios.
+/q: Modo silencioso, sem confirmações. O comando não solicitará confirmação antes de excluir os diretórios.
+
+==============================================================================
+
+
