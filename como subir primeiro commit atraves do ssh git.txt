@@ -13,21 +13,16 @@ ls     visualiza o que tem na pasta
 git rm <meu_arquivo.txt>
 
 Remover arquivo/diretório
-
 __________________________________________________________________________________________________________
-
 
 git rm -r <diretorio.txt>
 
 Remover diretório
-
-
 _________________________________________________________________________________________________________
 
 git rm *.png
 
 remove todos arquivos da pasta com formato .png  pode mudar para .py   ou .txt
-
 
 ==========================================================================================================
 
@@ -44,7 +39,6 @@ adiciona um arquivo especificico
 
 
 para editar
-
 
 
 git add Graficos.py
@@ -67,25 +61,23 @@ git push --force origin main
 
 força o push do main (envia de qualquer jeito)
 
-
 =========================================================================================================
 
 git pull
 
 Atualiza o repositório local com as alterações do repositório remoto
 
-
 -------------------------------------------------------------------------------------------------------
 
 git pull --force origin main
 
 força o pull trazer os arquvos do repositorio remoto
+
 =========================================================================================================
 
 git reset --hard HEAD^
 
 esse comando desfaz o commit e o push e volta o ultimo commit feito
-
 ________________________________________________________________________________________________________
 
 git reset --hard HEAD~1
@@ -97,7 +89,6 @@ Desfazer o último commit e descartar as alterações
 git reset --soft HEAD^
 
 esse comando desfaz o push
-
 __________________________________________________________________________________________________________
 
 git reset --soft HEAD~1
@@ -170,7 +161,6 @@ git push origin main
 
 
 
-
 ================================================================================================
 
 git branch
@@ -195,7 +185,6 @@ git branch -D <nome_do_branch>
 git checkout <nome_branch>
 
 Muda para um branch específico ou restaura arquivos.
-
 ________________________________________________________________________________________________
 
 git checkout -- <meu_arquivo.txt>
@@ -210,7 +199,6 @@ Combina as alterações de uma branch em outra.
 
 ===============================================================================================
 
-
 git push --set-upstream origin <nome_branch>:
 
 Faz o push do branch local <nome_branch> para o repositório remoto chamado "origin" e configura esse branch remoto como o upstream, facilitando futuros comandos de push e pull.
@@ -221,10 +209,7 @@ git config --global push.default current:
     
 Configura globalmente o Git para empurrar o branch atual para um branch remoto com o mesmo nome por padrão, quando git push é executado sem especificar explicitamente o branch remoto e local.
 
-
 ==============================================================================================
-
-
 
 git pull --set-upstream origin <nome_branch>:
 
@@ -250,7 +235,6 @@ git reset --hard <id_do_commit>
     volta no commit que voce deseja porem tem que procurar o id <id_do_commit> no git reflog
 
 ==============================================================================================
-
 
 git log
 
@@ -361,8 +345,40 @@ git config --list
 
 
 ==============================================================================================
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Bisect
+O bisect (pesquisa binária) é útil para encontrar um commit que esta gerando um bug ou uma inconsistência entre uma sequência de commits.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Iniciar pequinsa binária
+git bisect start
 
+______________________________________________________________________________________________
+
+Marcar o commit atual como ruim
+git bisect bad
+
+______________________________________________________________________________________________
+
+Marcar o commit de uma tag que esta sem o bug/inconsistência
+git bisect good vs-1.1
+
+______________________________________________________________________________________________
+
+Marcar o commit como bom
+O GIT irá navegar entre os commits para ajudar a indentificar o commit que esta com o problema. Se o commit atual não estiver quebrado, então é necessário marca-lo como bom.
+
+git bisect good
+______________________________________________________________________________________________
+Marcar o commit como ruim Se o commit estiver com o problema, então ele deverá ser marcado como ruim.
+
+git bisect bad
+
+______________________________________________________________________________________________
+Finalizar a pesquisa binária
+Depois de encontrar o commit com problema, para retornar para o HEAD utilize:
+
+git bisect reset
 
 
 
