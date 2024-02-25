@@ -75,6 +75,11 @@ força o pull trazer os arquvos do repositorio remoto
 
 =========================================================================================================
 
+git reset graficos.py
+
+# Desmarca o arquivo "graficos.py" do git add . tira ele da lista do add.
+________________________________________________________________________________________________________
+
 git reset --hard HEAD^
 
 esse comando desfaz o commit e o push e volta o ultimo commit feito
@@ -123,7 +128,7 @@ git init
 git add .
 git commit -m "Primerio commit"
 git branch -M main
-git remote add origin git@github.com:kono100/teste.git
+git remote add origin git@github.com:kono100/Removedor.git
 git push -u origin main
 
 
