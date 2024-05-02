@@ -312,6 +312,19 @@ git clean -fd: Remove todos os arquivos não rastreados e diretórios no seu dir
 
 ================================================================================================
 
+git clean -f
+
+removerá todos os arquivos não rastreados no diretório de trabalho
+
+_______________________________________________________________________________________________
+
+git clean -n
+
+Simula a operação de limpeza, mostrando quais arquivos seriam removidos.
+
+
+================================================================================================
+
 git tag vs-1.1
 
 Criando uma tag leve
