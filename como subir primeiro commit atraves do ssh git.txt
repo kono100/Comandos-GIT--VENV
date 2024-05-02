@@ -164,8 +164,11 @@ git push origin main
 ==================================================================================================
 
 
+cd APP-01
+git fsck
 
 
+verifica a integridade do banco de dados do Git e identifica quaisquer problemas de corrupção de arquivo
 
 
 
