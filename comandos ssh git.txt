@@ -112,6 +112,11 @@ git diff visualiza a diferença total do que voce alterou no codigo...  terminal
 
 =========================================================================================================
 
+git commit --amend -m "adicionar funcionalidade de login"
+
+substituirá a mensagem do último commit pela nova mensagem que você especificar
+
+________________________________________________________________________________________________________
 
 para subir o projeto ao github
 
