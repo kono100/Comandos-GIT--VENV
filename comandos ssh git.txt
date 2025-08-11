@@ -410,7 +410,10 @@ Depois de encontrar o commit com problema, para retornar para o HEAD utilize:
 
 git bisect reset
 
+______________________________________________________________________________________________
+Comando para cancelar o rebase
 
+git rebase --abort
 
 
 
